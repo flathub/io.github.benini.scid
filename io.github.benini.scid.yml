@@ -73,13 +73,14 @@ modules:
   - mkdir -p /app/engines/lc0
   - mv /app/bin/lc0 /app/engines/lc0/
   sources:
-  - type: archive
-    url: https://github.com/LeelaChessZero/lc0/archive/refs/tags/v0.30.0.zip
-    sha256: 6cc94509214204933b21ded9b04545eaa7e21978cbfeea0be2927ba69cb012d8
+  - type: git
+    url: https://github.com/LeelaChessZero/lc0.git
+    tag: v0.31.0
+    commit: 018f28bad2fc0a6214e73bc937ae46e8c770bf0e
   - type: archive
     dest: "./libs/lczero-common/"
     url: https://github.com/LeelaChessZero/lczero-common/archive/refs/heads/master.zip
-    sha256: 14aafc9d3ea1008da3a4ccddf0384ef2e40a90a4a30d61626b3a39bee6b2679e
+    sha256: ce33de444bf17f8c99dd1f4880cae0f29113197022b174435f94428e15d2e51c
 
 - name: nn # Recommended medium size network for GPU/CPU usage (see https://lczero.org/play/networks/bestnets/)
   buildsystem: simple
