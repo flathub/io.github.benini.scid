@@ -24,18 +24,18 @@ modules:
         env:
           ARCH: armv8
   build-commands:
-  - cp nn-5af11540bbfe.nnue ./src
-  - cd src; make -j build
-  - mkdir -p /app/engines/stockfish
-  - cp ./src/stockfish /app/engines/stockfish/
-  - cp ./nn-5af11540bbfe.nnue /app/engines/stockfish/
+    - cp nn-5af11540bbfe.nnue ./src
+    - cd src; make -j build
+    - mkdir -p /app/engines/stockfish
+    - cp ./src/stockfish /app/engines/stockfish/
+    - cp ./nn-5af11540bbfe.nnue /app/engines/stockfish/
   sources:
-  - type: archive
-    url: https://github.com/official-stockfish/Stockfish/releases/download/sf_16/stockfish-ubuntu-x86-64-modern.tar
-    sha256: dc94bdfbc0097a7606d3ed13b855cb03ee99184301b6fc8f8d85c68c4726bf8a
-  - type: file
-    url: https://tests.stockfishchess.org/api/nn/nn-5af11540bbfe.nnue
-    sha256: 5af11540bbfefcb54e38c5dd000cab4b469dfa7599a1d55be5d2722c20a8929b
+    - type: archive
+      url: https://github.com/official-stockfish/Stockfish/releases/download/sf_16/stockfish-ubuntu-x86-64-modern.tar
+      sha256: dc94bdfbc0097a7606d3ed13b855cb03ee99184301b6fc8f8d85c68c4726bf8a
+    - type: file
+      url: https://tests.stockfishchess.org/api/nn/nn-5af11540bbfe.nnue
+      sha256: 5af11540bbfefcb54e38c5dd000cab4b469dfa7599a1d55be5d2722c20a8929b
 
 - name: eigen # library for linear algebra, used for lc0
   buildsystem: cmake-ninja
@@ -64,19 +64,19 @@ modules:
 - name: lc0 # Lc0 engine, put into /app/engines/lc0
   buildsystem: meson
   config-opts:
-  - "-Dopenblas=true"
-  - "-Dopenblas_libdirs=/app/lib"
-  - "-Dgtest=false"
-  - "-Db_lto=true"
-  - "-Dopencl=false"
+    - "-Dopenblas=true"
+    - "-Dopenblas_libdirs=/app/lib"
+    - "-Dgtest=false"
+    - "-Db_lto=true"
+    - "-Dopencl=false"
   post-install:
-  - mkdir -p /app/engines/lc0
-  - mv /app/bin/lc0 /app/engines/lc0/
+    - mkdir -p /app/engines/lc0
+    - mv /app/bin/lc0 /app/engines/lc0/
   sources:
-  - type: git
-    url: https://github.com/LeelaChessZero/lc0.git
-    tag: v0.31.0
-    commit: 018f28bad2fc0a6214e73bc937ae46e8c770bf0e
+    - type: git
+      url: https://github.com/LeelaChessZero/lc0.git
+      tag: v0.31.0
+      commit: 018f28bad2fc0a6214e73bc937ae46e8c770bf0e
 
 - name: nn # Recommended medium size network for GPU/CPU usage (see https://lczero.org/play/networks/bestnets/)
   buildsystem: simple
