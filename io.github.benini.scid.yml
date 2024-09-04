@@ -2,7 +2,7 @@ app-id: io.github.benini.scid
 runtime: org.freedesktop.Platform
 runtime-version: '23.08'
 sdk: org.freedesktop.Sdk
-command: /app/scid/scid
+command: scid
 
 finish-args:
   - --filesystem=home        # for accessing files in the user's home folder
@@ -111,6 +111,7 @@ modules:
   - name: scid # main app
     buildsystem: cmake-ninja
     post-install:
+      - ln -s /app/scid/scid /app/bin/
       - install -Dma+r flatpak/io.github.benini.scid.svg /app/share/icons/hicolor/scalable/apps/io.github.benini.scid.svg
       - install -Dma+r flatpak/io.github.benini.scid.desktop /app/share/applications/io.github.benini.scid.desktop
       - install -Dma+r flatpak/io.github.benini.scid.appdata.xml /app/share/appdata/io.github.benini.scid.appdata.xml
