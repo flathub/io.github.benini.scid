@@ -75,8 +75,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/LeelaChessZero/lc0.git
-        tag: v0.31.0
-        commit: 018f28bad2fc0a6214e73bc937ae46e8c770bf0e
+        tag: v0.31.2
+        commit: 8ba8aa426460bbeda452754ff7d6a9bb60bb0e54
   
   - name: nn # Recommended medium size network for GPU/CPU usage (see https://lczero.org/play/networks/bestnets/)
     buildsystem: simple
