@@ -118,5 +118,4 @@ modules:
     sources:
       - type: git
         url: https://github.com/benini/scid.git
-        tag: v5.1.0
-        commit: 22aba17c8e41791637a7ca81c17e790394cba744
+        commit: be56eae535473304dd90fe7b4a5cbf74d4327e15
