@@ -52,6 +52,8 @@ modules:
       - FC=gfortran
       - NO_LAPACKE=1
       - USE_OPENMP=0
+    build-options:
+      cflags: -Wno-error=incompatible-pointer-types
     make-install-args:
       - PREFIX=/app
     post-install:
