@@ -116,8 +116,12 @@ modules:
 
   - name: tk # latest stable tk, required for scid
     subdir: unix
-    build-commands:
-      - make install-binaries install-libraries
+    make-args:
+      - binaries
+      - libraries
+    make-install-args:
+      - install-binaries
+      - install-libraries
     post-install:
       - chmod 755 /app/lib/libtk*.so
     cleanup:
