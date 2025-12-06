@@ -100,23 +100,49 @@ modules:
       url: https://storage.lczero.org/files/networks-contrib/t1-512x15x8h-distilled-swa-3395000.pb.gz
       sha256: 1fdb1519e5b02e03f1d9201ec8eb95f640e32cc6459a4f14c0eab6890dc097e8
 
-  - name: tcl # latest stable tcl, required for scid
-    sources:
-      - type: git
-        url: https://github.com/tcltk/tcl.git
-        commit: b522ab7c2ad740a068df9546538405f8d2a2c703
-    subdir: "unix"
+
+  - name: tcl
+    buildsystem: autotools
+    subdir: unix
     post-install:
       - chmod 755 /app/lib/libtcl*.so
-
-  - name: tk # latest stable tk, required for scid
+    cleanup:
+      - /bin
+      - /lib/pkgconfig
+      - /man
     sources:
-      - type: git
-        url: https://github.com/tcltk/tk.git
-        commit: afdf30259d05840a4e513bae638955902322d1ec
-    subdir: "unix"
+      - type: archive
+        url: https://prdownloads.sourceforge.net/tcl/tcl8.6.16-src.tar.gz
+        sha256: 91cb8fa61771c63c262efb553059b7c7ad6757afa5857af6265e4b0bdc2a14a5
+        x-checker-data:
+          type: anitya
+          project-id: 4941
+          stable-only: true
+          versions:
+            <: '9'
+          url-template: https://prdownloads.sourceforge.net/tcl/tcl$version-src.tar.gz
+  - name: tk
+    buildsystem: autotools
+    subdir: unix
     post-install:
       - chmod 755 /app/lib/libtk*.so
+    cleanup:
+      - /bin
+      - /lib/pkgconfig
+      - /man
+    sources:
+      - type: archive
+        url: https://prdownloads.sourceforge.net/tcl/tk8.6.16-src.tar.gz
+        sha256: be9f94d3575d4b3099d84bc3c10de8994df2d7aa405208173c709cc404a7e5fe
+        x-checker-data:
+          type: anitya
+          project-id: 11426
+          stable-only: true
+          versions:
+            <: '9'
+          url-template: https://prdownloads.sourceforge.net/tcl/tk$version-src.tar.gz
+
+
 
   - name: scid # main app
     buildsystem: cmake-ninja
