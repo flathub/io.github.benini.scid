@@ -103,18 +103,18 @@ modules:
 
   - name: tcl # latest stable tcl, required for scid
     sources:
-      - type: archive
-        url: https://prdownloads.sourceforge.net/tcl/tcl-core8.6.15-src.tar.gz
-        sha1: b35c3bf9044841e0bdaa96db0512f1d1ec59495a
+      - type: git
+        url: https://github.com/tcltk/tcl.git
+        commit: b522ab7c2ad740a068df9546538405f8d2a2c703
     subdir: "unix"
     post-install:
       - chmod 755 /app/lib/libtcl*.so
 
   - name: tk # latest stable tk, required for scid
     sources:
-      - type: archive
-        url: https://prdownloads.sourceforge.net/tcl/tk8.6.15-src.tar.gz
-        sha1: ef44f7be00d0249e281ad87785650f5475bbc939
+      - type: git
+        url: https://github.com/tcltk/tk.git
+        commit: afdf30259d05840a4e513bae638955902322d1ec
     subdir: "unix"
     post-install:
       - chmod 755 /app/lib/libtk*.so
