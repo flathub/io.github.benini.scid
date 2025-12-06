@@ -114,9 +114,10 @@ modules:
         tag: core-8-6-17
         commit: b522ab7c2ad740a068df9546538405f8d2a2c703
 
-  - name: tk
-    buildsystem: autotools
+  - name: tk # latest stable tk, required for scid
     subdir: unix
+    build-commands:
+      - make install-binaries install-libraries
     post-install:
       - chmod 755 /app/lib/libtk*.so
     cleanup:
@@ -124,19 +125,11 @@ modules:
       - /lib/pkgconfig
       - /man
     sources:
-      - type: archive
-        url: https://prdownloads.sourceforge.net/tcl/tk8.6.16-src.tar.gz
-        sha256: be9f94d3575d4b3099d84bc3c10de8994df2d7aa405208173c709cc404a7e5fe
-        x-checker-data:
-          type: anitya
-          project-id: 11426
-          stable-only: true
-          versions:
-            <: '9'
-          url-template: https://prdownloads.sourceforge.net/tcl/tk$version-src.tar.gz
-
-
-
+      - type: git
+        url: https://github.com/tcltk/tk.git
+        tag: core-8-6-17
+        commit: afdf30259d05840a4e513bae638955902322d1ec
+  
   - name: scid # main app
     buildsystem: cmake-ninja
     post-install:
