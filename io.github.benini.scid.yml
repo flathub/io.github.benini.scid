@@ -26,7 +26,7 @@ modules:
             ARCH: armv8
     build-commands:
       - make -j ${FLATPAK_BUILDER_N_JOBS} build
-      - make install PREFIX=/app/engines
+      - make install BINDIR=/app/engines
     sources:
       - type: archive
         url: https://github.com/official-stockfish/Stockfish/archive/sf_17.tar.gz
