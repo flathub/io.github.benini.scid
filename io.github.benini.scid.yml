@@ -39,6 +39,10 @@ modules:
         dest: src
         url: https://tests.stockfishchess.org/api/nn/nn-1111cefa1111.nnue
         sha256: 1111cefa11116b77161bd4b14dab4c50f26e5920c756f4861592be3dcd6de174
+      - type: file
+        dest: src
+        url: https://tests.stockfishchess.org/api/nn/nn-37f18f62d772.nnue
+        sha256: 37f18f62d772f3107e1d6aaca3898c130c3c86f2ab63e6555fbbca20635a899d
 
   - name: eigen # library for linear algebra, used for lc0
     buildsystem: cmake-ninja
