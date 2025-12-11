@@ -25,7 +25,7 @@ modules:
             ARCH: armv8
     build-commands:
       - cp nn-5af11540bbfe.nnue ./src
-      - cd src; make -j build
+      - cd src; make -j $FLATPAK_BUILDER_N_JOBS build
       - mkdir -p /app/engines/stockfish
       - cp ./src/stockfish /app/engines/stockfish/
       - cp ./nn-5af11540bbfe.nnue /app/engines/stockfish/
