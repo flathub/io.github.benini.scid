@@ -25,7 +25,7 @@ modules:
           env:
             ARCH: armv8
     build-commands:
-      - make -j ${FLATPAK_BUILDER_N_JOBS} build
+      - make -j build
       - make install BINDIR=/app/engines
     sources:
       - type: archive
