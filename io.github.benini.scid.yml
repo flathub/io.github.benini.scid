@@ -13,8 +13,9 @@ finish-args:
   - --socket=pulseaudio      # play sound with PulseAudio
 
 modules:
-  - name: stockfish # Stockfish engine, put into /app/engines/stockfish/
-    buildsystem: simple
+  - name: stockfish # Stockfish engine, put into /app/engines
+    subdir: src
+    buildsystem: simple    
     build-options:
       arch:
         x86_64:
@@ -24,18 +25,16 @@ modules:
           env:
             ARCH: armv8
     build-commands:
-      - cp nn-5af11540bbfe.nnue ./src
-      - cd src; make -j build
-      - mkdir -p /app/engines/stockfish
-      - cp ./src/stockfish /app/engines/stockfish/
-      - cp ./nn-5af11540bbfe.nnue /app/engines/stockfish/
+      - make -j ${FLATPAK_BUILDER_N_JOBS} build
+      - make install PREFIX=/app/engines
     sources:
       - type: archive
-        url: https://github.com/official-stockfish/Stockfish/releases/download/sf_16/stockfish-ubuntu-x86-64-modern.tar
-        sha256: dc94bdfbc0097a7606d3ed13b855cb03ee99184301b6fc8f8d85c68c4726bf8a
-      - type: file
-        url: https://tests.stockfishchess.org/api/nn/nn-5af11540bbfe.nnue
-        sha256: 5af11540bbfefcb54e38c5dd000cab4b469dfa7599a1d55be5d2722c20a8929b
+        url: https://github.com/official-stockfish/Stockfish/archive/sf_17.tar.gz
+        sha256: 8f9b52285c3348c065b7cb58410626df16d7416a2e60a3b04f3ec7c038e67ad1
+        x-checker-data:
+          type: anitya
+          project-id: 5750
+          url-template: https://github.com/official-stockfish/Stockfish/archive/sf_$version.tar.gz
 
   - name: eigen # library for linear algebra, used for lc0
     buildsystem: cmake-ninja
