@@ -29,16 +29,16 @@ modules:
       - make install BINDIR=/app/engines
     sources:
       - type: archive
-        url: https://github.com/official-stockfish/Stockfish/archive/sf_17.tar.gz
-        sha256: 8f9b52285c3348c065b7cb58410626df16d7416a2e60a3b04f3ec7c038e67ad1
+        url: https://github.com/official-stockfish/Stockfish/archive/sf_17.1.tar.gz
+        sha256: 0cfd9396438798cc68f5c0d5fa0bb458bb8ffff7de06add841aaeace86bec1f1
         x-checker-data:
           type: anitya
           project-id: 5750
           url-template: https://github.com/official-stockfish/Stockfish/archive/sf_$version.tar.gz
       - type: file
         dest: src
-        url: https://tests.stockfishchess.org/api/nn/nn-1111cefa1111.nnue
-        sha256: 1111cefa11116b77161bd4b14dab4c50f26e5920c756f4861592be3dcd6de174
+        url: https://tests.stockfishchess.org/api/nn/nn-1c0000000000.nnue
+        sha256: 1c0000000000a67d629999d932d0c373f7450ce43cd12d0562868f4eaf9ae2ad
       - type: file
         dest: src
         url: https://tests.stockfishchess.org/api/nn/nn-37f18f62d772.nnue
