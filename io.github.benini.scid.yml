@@ -151,7 +151,16 @@ modules:
     sources:
       - type: git
         url: https://github.com/benini/scid.git
-        commit: be56eae535473304dd90fe7b4a5cbf74d4327e15
+        commit: c1c3006d5c304a32b2784b64e6e73070f91a97e7
+
+  - name: players_data
+    buildsystem: simple
+    build-commands:
+      - cp -r * /app/scid
+    sources:
+      - type: archive
+        url: https://prdownloads.sourceforge.net/scid/players-5.1.zip
+        sha256: 29f31da6baa57038193deff80a6d0f886de0883dc8b991f1b80b2f81b108cf35
 
   - name: ttk_themes
     buildsystem: simple
