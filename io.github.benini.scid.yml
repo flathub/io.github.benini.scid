@@ -153,7 +153,7 @@ modules:
         url: https://github.com/benini/scid.git
         commit: be56eae535473304dd90fe7b4a5cbf74d4327e15
 
-    - name: ttk_themes
+  - name: ttk_themes
     buildsystem: simple
     build-commands:
       - mv tclthemes /app/scid/themes
