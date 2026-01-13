@@ -142,12 +142,12 @@ modules:
         commit: afdf30259d05840a4e513bae638955902322d1ec
 
   - name: scid # main app
-    buildsystem: cmake-ninja
+    buildsystem: cmake
     config-opts:
       - -DCMAKE_VERBOSE_MAKEFILE=ON
     build-options:
       env:
-        CXXFLAGS: ""
+        CFLAGS: ""
     post-install:
       - ln -s /app/scid/scid /app/bin/
       - install -Dma+r flatpak/io.github.benini.scid.svg /app/share/icons/hicolor/scalable/apps/io.github.benini.scid.svg
