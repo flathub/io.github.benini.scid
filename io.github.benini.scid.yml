@@ -159,10 +159,9 @@ modules:
   - name: players_data
     buildsystem: simple
     build-commands:
-      - ls -la
-      - cp -rv * /app/scid/
+      - unzip -v *.zip -d /app/scid/
     sources:
-      - type: archive
+      - type: file
         url: https://prdownloads.sourceforge.net/scid/players-5.1.zip
         sha256: 29f31da6baa57038193deff80a6d0f886de0883dc8b991f1b80b2f81b108cf35
 
