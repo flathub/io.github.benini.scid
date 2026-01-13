@@ -143,6 +143,9 @@ modules:
 
   - name: scid # main app
     buildsystem: cmake-ninja
+    build-options:
+      env:
+        CXXFLAGS: ""
     post-install:
       - ln -s /app/scid/scid /app/bin/
       - install -Dma+r flatpak/io.github.benini.scid.svg /app/share/icons/hicolor/scalable/apps/io.github.benini.scid.svg
