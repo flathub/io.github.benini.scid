@@ -143,6 +143,8 @@ modules:
 
   - name: scid # main app
     buildsystem: cmake-ninja
+    config-opts:
+      - -DCMAKE_VERBOSE_MAKEFILE=ON
     build-options:
       env:
         CXXFLAGS: ""
