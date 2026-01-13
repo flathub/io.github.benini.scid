@@ -144,6 +144,7 @@ modules:
   - name: scid # main app
     buildsystem: cmake
     config-opts:
+      - -DCMAKE_BUILD_TYPE=Release
       - -DCMAKE_VERBOSE_MAKEFILE=ON
     build-options:
       env:
