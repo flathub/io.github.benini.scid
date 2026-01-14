@@ -123,7 +123,6 @@ modules:
   - name: openblas # Basic Linear Algebra Subprograms library, used for lc0
     no-autogen: true
     make-args:
-      - -j${FLATPAK_BUILDER_N_JOBS}
       - DYNAMIC_ARCH=1
       - FC=gfortran
       - NO_LAPACKE=1
