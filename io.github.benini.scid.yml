@@ -60,7 +60,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/benini/scid.git
-        commit: 4ba5da2c18b47cf71e52a8ae0acf79eb3331954a
+        tag: v5.1.202601
+        commit: 6ba5c35f33b2252bdcb62ea243c3d99297907bad
 
   - name: players_data
     buildsystem: simple
