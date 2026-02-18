@@ -106,8 +106,8 @@ modules:
           url-template: https://github.com/official-stockfish/Stockfish/archive/sf_$version.tar.gz
       - type: file
         dest: src
-        url: https://tests.stockfishchess.org/api/nn/nn-1c0000000000.nnue
-        sha256: 1c0000000000a67d629999d932d0c373f7450ce43cd12d0562868f4eaf9ae2ad
+        url: https://tests.stockfishchess.org/api/nn/nn-c288c895ea92.nnue
+        sha256: c288c895ea924429ea9092e3f36b2b3c1f00f2a3a4c759ff7e57e79e3b43e4a7
       - type: file
         dest: src
         url: https://tests.stockfishchess.org/api/nn/nn-37f18f62d772.nnue
