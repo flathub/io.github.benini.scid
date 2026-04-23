@@ -140,8 +140,8 @@ modules:
       - /share/man
     sources:
       - type: archive
-        url: https://github.com/OpenMathLib/OpenBLAS/archive/v0.3.31.tar.gz
-        sha512: 703b84c476c148a0922a04b1c33c9c4c452f478d608d93e59204b8f0f2c516344301ff0a4dbb3750a2449db0d28cc2df001c295898e859b41ecb8381f9c2eab8
+        url: https://github.com/OpenMathLib/OpenBLAS/archive/v0.3.33.tar.gz
+        sha512: 68fa2b90a93a2dfd84dfa586af07d90952fd4f2ad8dfe26061be250e80fec8f1a76ad78977f217c7dbdd26291249f1ac38a07f08ef323eee7a248c4cb67cd670
         x-checker-data:
           type: anitya
           project-id: 2540
